@@ -1,0 +1,15 @@
+.DS_Store
+xcuserdata/
+*.xccheckout
+*.xcuserstate
+*.xcscmblueprint
+DerivedData/
+build/
+.swiftpm/
+.build/
+Pods/
+Carthage/
+*.ipa
+*.dSYM.zip
+*.dSYM
+Secrets.xcconfig
