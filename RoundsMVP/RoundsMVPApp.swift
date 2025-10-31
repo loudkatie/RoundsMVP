@@ -2,17 +2,32 @@
 //  RoundsMVPApp.swift
 //  RoundsMVP
 //
-//  Created by Katie Richman on 10/30/25.
-//
 
 import SwiftUI
 
 @main
 struct RoundsMVPApp: App {
+    @StateObject private var app = AppModel()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .tint(.blue)   // global accent
+            RootSwitcher()
+                .environmentObject(app)
+                .tint(.blue) // global accent
+        }
+    }
+}
+
+private struct RootSwitcher: View {
+    @EnvironmentObject private var app: AppModel
+
+    var body: some View {
+        Group {
+            if app.hasCompletedOnboarding {
+                RoundsView()
+            } else {
+                OnboardingView()
+            }
         }
     }
 }
