@@ -12,6 +12,7 @@ struct RoundsMVPApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .tint(.blue)   // global accent
         }
     }
 }
